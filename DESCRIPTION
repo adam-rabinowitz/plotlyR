@@ -1,0 +1,14 @@
+Package: plotlyR
+Title: Creating Interactive Plots
+Version: 0.0.1
+Authors: 
+    person("Adam", "Rabinowitz", "adamrabs@gmail.com", role = c("aut", "cre"))
+Description: Helper functions for creating interactive plots in R using plotly
+License: `use_gpl3_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports:
+    dplyr,
+    magrittr,
+    plotly
