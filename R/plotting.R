@@ -121,8 +121,8 @@ pie_plotly <- function(
   # Create figure
   fig <- plotly::plot_ly(
     plot.data, labels=~x, values=~y, type='pie', hole=hole,
-    marker = list(colors=pie.data$color), direction='clockwise', sort=F,
-    textposition='none', text=pie.data$text, hoverinfo='text'
+    marker = list(colors=plot.data$color), direction='clockwise', sort=F,
+    textposition='none', text=plot.data$text, hoverinfo='text'
   )
   # Add titles and return
   fig <- fig %>%
