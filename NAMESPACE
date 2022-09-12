@@ -3,6 +3,7 @@
 export("%>%")
 export(add_lines)
 export(add_titles)
+export(add_watermark)
 export(clean_plotly)
 export(factor_dates)
 export(find_date_cols)

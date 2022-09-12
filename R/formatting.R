@@ -81,6 +81,33 @@ add_lines <- function(
   return(fig)
 }
 
+#' Function to add watermark at centre of plot
+#' @param fig a plotly plot
+#' @param source source of image
+#' @param opacity opacity of image
+#' @param size size relative to plot
+#' @export
+add_watermark <- function(fig, source, opacity, size=1) {
+  # Add figure and return
+  fig <- fig %>%
+    plotly::layout(
+      images=list(
+        list(
+          source = source,
+          xref = 'paper',
+          yref = 'paper',
+          x = 0.5,
+          y = 0.5,
+          xanchor = 'center',
+          yanchor = 'middle',
+          sizex = size,
+          sizey = size,
+          opacity = opacity
+        )
+      )
+    )
+  return(fig)
+}
 
 #' Apply default formatting to plot
 #'
