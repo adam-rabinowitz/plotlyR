@@ -115,21 +115,23 @@ add_watermark <- function(fig, source, opacity, size=1) {
 #' @return The plotly plot with bar buttons removed
 #' @export
 clean_plotly <- function(fig) {
-  plot %>% plotly::config(
-    modeBarButtonsToRemove = c(
-      'zoom2d',
-      'zoomIn2d',
-      'zoomOut2d',
-      'pan2d',
-      'select2d',
-      'lasso2d', 
-      'autoScale2d',
-      'hoverClosestCartesian',
-      'hoverCompareCartesian',
-      'toggleSpikelines',
-      'resetScale2d',
-      'hoverClosestPie'
-    ),
-    displaylogo = FALSE
-  )
+  fig <- fig %>%
+    plotly::config(
+      modeBarButtonsToRemove = c(
+        'zoom2d',
+        'zoomIn2d',
+        'zoomOut2d',
+        'pan2d',
+        'select2d',
+        'lasso2d', 
+        'autoScale2d',
+        'hoverClosestCartesian',
+        'hoverCompareCartesian',
+        'toggleSpikelines',
+        'resetScale2d',
+        'hoverClosestPie'
+      ),
+      displaylogo = FALSE
+    )
+  return(fig)
 }
