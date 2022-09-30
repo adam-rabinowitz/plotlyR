@@ -62,7 +62,7 @@ line_plotly <- function(
 #' @param fig A pre-existing plot to which the traces can be added
 #' @return A plotly plot
 #' @export
-stacked_bar_plotly <- function(
+bar_plotly <- function(
   plot.data, date_format=NULL, title=NULL, x.title=NULL, y.title=NULL,
   leg.title=NULL, fig=plotly::plot_ly()
 ) {
@@ -81,7 +81,7 @@ stacked_bar_plotly <- function(
   }
   plot.data.list <- base::split(plot.data, plot.data$bar)
   # Add traces to plot
-  for (bar in rev(names(plot.data.list))) {
+  for (bar in names(plot.data.list)) {
     color <- plot.data.list[[bar]]$color[1]
     fig <- fig %>%
       plotly::add_trace(
@@ -98,8 +98,7 @@ stacked_bar_plotly <- function(
   fig <- fig %>%
     add_titles(
       title=title, x.title=x.title, y.title=y.title, leg.title=leg.title
-    ) %>%
-    plotly::layout(barmode='stack')
+    )
   return(fig)
 }
 

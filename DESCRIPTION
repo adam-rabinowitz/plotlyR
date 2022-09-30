@@ -1,6 +1,6 @@
 Package: plotlyR
 Title: Creating Interactive Plots
-Version: 0.0.1
+Version: 0.0.2
 Authors: 
     person("Adam", "Rabinowitz", "adamrabs@gmail.com", role = c("aut", "cre"))
 Description: Helper functions for creating interactive plots in R using plotly
