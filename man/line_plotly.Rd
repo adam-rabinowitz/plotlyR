@@ -5,19 +5,17 @@
 \title{Create a line plot using plotly}
 \usage{
 line_plotly(
-  plot.data,
-  date_format = NULL,
+  plot_data,
   title = NULL,
   x.title = NULL,
   y.title = NULL,
   leg.title = NULL,
-  fig = plotly::plot_ly()
+  colors = NULL,
+  date_format = NULL
 )
 }
 \arguments{
-\item{plot.data}{A data.frame containing plot data}
-
-\item{date_format}{Format to apply to date columns}
+\item{plot_data}{A data.frame containing plot data}
 
 \item{title}{Figure title}
 
@@ -27,7 +25,9 @@ line_plotly(
 
 \item{leg.title}{Title of the legend}
 
-\item{fig}{A pre-existing plot to which the traces can be added}
+\item{colors}{A named vector supplying colors}
+
+\item{date_format}{Format to apply to date columns}
 }
 \value{
 A plotly plot

@@ -5,20 +5,16 @@
 \title{Create a vertically stacked bar chart}
 \usage{
 bar_plotly(
-  plot.data,
-  date_format = NULL,
+  plot_data,
   title = NULL,
   x.title = NULL,
   y.title = NULL,
   leg.title = NULL,
-  fig = plotly::plot_ly()
+  colors = NULL,
+  date_format = NULL
 )
 }
 \arguments{
-\item{plot.data}{A data.frame containing plot data}
-
-\item{date_format}{Format to apply to date columns}
-
 \item{title}{Figure title}
 
 \item{x.title}{Title of x-axis}
@@ -26,6 +22,10 @@ bar_plotly(
 \item{y.title}{Title of y-axis}
 
 \item{leg.title}{Title of the legend}
+
+\item{date_format}{Format to apply to date columns}
+
+\item{plot.data}{A data.frame containing plot data}
 
 \item{fig}{A pre-existing plot to which the traces can be added}
 }

@@ -4,14 +4,14 @@
 \alias{pie_plotly}
 \title{Create a pie chart}
 \usage{
-pie_plotly(plot.data, hole = 0, title = NULL, leg.title = NULL)
+pie_plotly(plot_data, hole = 0, title = NULL, leg.title = NULL, colors = NULL)
 }
 \arguments{
-\item{plot.data}{A data.frame containing plot data}
-
 \item{title}{Figure title}
 
 \item{leg.title}{Title of the legend}
+
+\item{plot.data}{A data.frame containing plot data}
 }
 \value{
 A plotly plot

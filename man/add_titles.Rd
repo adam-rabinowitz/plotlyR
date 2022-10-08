@@ -2,7 +2,7 @@
 % Please edit documentation in R/formatting.R
 \name{add_titles}
 \alias{add_titles}
-\title{Apply default formatting to plot}
+\title{Add title to plotly plot}
 \usage{
 add_titles(fig, title = NULL, x.title = NULL, y.title = NULL, leg.title = NULL)
 }
@@ -19,5 +19,5 @@ add_titles(fig, title = NULL, x.title = NULL, y.title = NULL, leg.title = NULL)
 The formatted plotly plot
 }
 \description{
-Apply default formatting to plot
+Add title to plotly plot
 }
