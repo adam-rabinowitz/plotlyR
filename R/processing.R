@@ -4,7 +4,9 @@
 #' @param min_cols Minimum number of columns to be found
 #' @return Names of columns containing dates
 #' @export
-find_date_cols <- function(tb, min_cols=1) {
+find_date_cols <- function(
+  tb, min_cols=1
+) {
   # Find columns that are dates
   col_classes <- base::lapply(tb, class)
   date_classes <- base::lapply(
@@ -25,7 +27,9 @@ find_date_cols <- function(tb, min_cols=1) {
 #' @param min_cols Minimum number of columns to be found
 #' @return The data.frame or tibble with formatted columns
 #' @export
-factor_dates <- function(tb, date_format, min_cols=1) {
+factor_dates <- function(
+  tb, date_format, min_cols=1
+) {
   # Find columns that are dates
   date_cols <- find_date_cols(tb=tb, min_cols=min_cols)
   # Format date columns
@@ -41,4 +45,29 @@ factor_dates <- function(tb, date_format, min_cols=1) {
   }
   # Return formatted data
   return(tb)
+}
+
+
+#' Checks expected columns are in a table
+#'
+#' Raises an error if expected columns are absent.
+#'
+#' @param tb A data.frame or tibble
+#' @param expected_names Expected columns names within tb
+#' @export
+check_column_names <- function(
+  tb, expected_names  
+) {
+  # Check column names
+  missing <- base::setdiff(expected_names, base::colnames(tb))
+  # Raise an error if any are missing
+  if (length(missing) > 0) {
+    base::stop(
+      base::paste(
+        'the following columns are missing:',
+        base::paste(missing, collapse=', ')
+      )
+    )
+  }
+  base::invisible()
 }
