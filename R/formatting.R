@@ -1,4 +1,4 @@
-#' Apply default formatting to plot
+#' Add title to plotly plot
 #'
 #' @param fig a plotly plot
 #' @param title plot title
@@ -27,6 +27,40 @@ add_titles <- function(
     )
   return(fig)
 }
+
+
+#' Order x and y axis if they are factors
+#'
+#' @param fig a plotly plot
+#' @param plot_data The data from which the plot was created
+#' @return The formatted plotly plot
+#' @export
+order_xy_axis <- function(
+  fig, plot_data
+) {
+  # Order x axis
+  if (is.factor(plot_data[['x']])) {
+    fig <- fig %>%
+      plotly::layout(
+        xaxis = list(
+          categoryorder = 'array',
+          categoryarray = levels(plot_data$x)
+        )
+      )
+  }
+  # Order y axis
+  if (is.factor(plot_data[['y']])) {
+    fig <- fig %>%
+      plotly::layout(
+        yaxis = list(
+          categoryorder = 'array',
+          categoryarray = levels(plot_data$y)
+        )
+      )
+  }
+  return(fig)
+}
+
 
 #' Add veritcal and horizontal lines to plot
 #'
@@ -81,6 +115,7 @@ add_lines <- function(
   return(fig)
 }
 
+
 #' Function to add watermark at centre of plot
 #' @param fig a plotly plot
 #' @param source source of image
@@ -109,7 +144,8 @@ add_watermark <- function(fig, source, opacity, size=1) {
   return(fig)
 }
 
-#' Apply default formatting to plot
+
+#' Clean plotly plots
 #'
 #' @param fig a plotly plot
 #' @return The plotly plot with bar buttons removed
